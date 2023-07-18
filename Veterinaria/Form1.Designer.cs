@@ -50,7 +50,7 @@ namespace Veterinaria
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(171, 50);
             this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Text = "cita";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1

@@ -41,7 +41,7 @@ namespace Veterinaria
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(149)))), ((int)(((byte)(20)))));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(193)))), ((int)(((byte)(129)))));
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);

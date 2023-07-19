@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Veterinaria
 {
-    public partial class PantallaDeInicioPublica : Form
+    public partial class InicioUsuarioDueño : Form
     {
-        public PantallaDeInicioPublica()
+        public InicioUsuarioDueño()
         {
             InitializeComponent();
         }
@@ -25,6 +25,13 @@ namespace Veterinaria
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            login miLogin = new login();
+            miLogin.ShowDialog();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace Veterinaria
 {
-    partial class Form1
+    partial class login
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -31,12 +31,12 @@ namespace Veterinaria
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.btnInicioSesion = new System.Windows.Forms.Button();
+            this.btnRegistrarse = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAcceder = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -49,7 +49,6 @@ namespace Veterinaria
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "contraseña";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -60,37 +59,39 @@ namespace Veterinaria
             this.label2.TabIndex = 1;
             this.label2.Text = "usuario";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(136, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtUsuario.Location = new System.Drawing.Point(136, 34);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(192, 20);
+            this.txtUsuario.TabIndex = 2;
             // 
-            // textBox2
+            // txtContraseña
             // 
-            this.textBox2.Location = new System.Drawing.Point(136, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtContraseña.Location = new System.Drawing.Point(136, 63);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(192, 20);
+            this.txtContraseña.TabIndex = 3;
             // 
-            // button1
+            // btnInicioSesion
             // 
-            this.button1.Location = new System.Drawing.Point(188, 98);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 31);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "iniciar sesion";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInicioSesion.Location = new System.Drawing.Point(188, 98);
+            this.btnInicioSesion.Name = "btnInicioSesion";
+            this.btnInicioSesion.Size = new System.Drawing.Size(83, 31);
+            this.btnInicioSesion.TabIndex = 4;
+            this.btnInicioSesion.Text = "iniciar sesion";
+            this.btnInicioSesion.UseVisualStyleBackColor = true;
+            this.btnInicioSesion.Click += new System.EventHandler(this.btnInicioSesion_Click);
             // 
-            // button2
+            // btnRegistrarse
             // 
-            this.button2.Location = new System.Drawing.Point(188, 168);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 27);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "registrarse";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRegistrarse.Location = new System.Drawing.Point(188, 168);
+            this.btnRegistrarse.Name = "btnRegistrarse";
+            this.btnRegistrarse.Size = new System.Drawing.Size(83, 27);
+            this.btnRegistrarse.TabIndex = 5;
+            this.btnRegistrarse.Text = "registrarse";
+            this.btnRegistrarse.UseVisualStyleBackColor = true;
+            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
             // label3
             // 
@@ -102,14 +103,15 @@ namespace Veterinaria
             this.label3.TabIndex = 6;
             this.label3.Text = "¿no tienes una cuenta?";
             // 
-            // button3
+            // btnAcceder
             // 
-            this.button3.Location = new System.Drawing.Point(188, 217);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(83, 31);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "acceder";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAcceder.Location = new System.Drawing.Point(188, 217);
+            this.btnAcceder.Name = "btnAcceder";
+            this.btnAcceder.Size = new System.Drawing.Size(83, 31);
+            this.btnAcceder.TabIndex = 7;
+            this.btnAcceder.Text = "acceder";
+            this.btnAcceder.UseVisualStyleBackColor = true;
+            this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
             // label4
             // 
@@ -121,23 +123,23 @@ namespace Veterinaria
             this.label4.TabIndex = 8;
             this.label4.Text = "¿eres un medico?";
             // 
-            // Form1
+            // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 283);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnRegistrarse);
+            this.Controls.Add(this.btnInicioSesion);
+            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "login";
+            this.Text = "Inicio de sesión";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,12 +149,12 @@ namespace Veterinaria
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.Button btnInicioSesion;
+        private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAcceder;
         private System.Windows.Forms.Label label4;
     }
 }

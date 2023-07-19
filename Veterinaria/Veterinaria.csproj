@@ -76,7 +76,9 @@
     <Compile Include="PantallaDeInicioPublica.Designer.cs">
       <DependentUpon>PantallaDeInicioPublica.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaInicioMedicos.cs" />
+    <Compile Include="PantallaInicioMedicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaInicioMedicos.Designer.cs">
       <DependentUpon>PantallaInicioMedicos.cs</DependentUpon>
     </Compile>

@@ -31,7 +31,7 @@ namespace Veterinaria
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnInicioSesion = new System.Windows.Forms.Button();
             this.btnRegistrarse = new System.Windows.Forms.Button();
@@ -55,16 +55,16 @@ namespace Veterinaria
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(30, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "usuario";
+            this.label2.Text = "nombre";
             // 
-            // txtUsuario
+            // txtNombreUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(136, 34);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(192, 20);
-            this.txtUsuario.TabIndex = 2;
+            this.txtNombreUsuario.Location = new System.Drawing.Point(136, 34);
+            this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.Size = new System.Drawing.Size(192, 20);
+            this.txtNombreUsuario.TabIndex = 2;
             // 
             // txtContraseña
             // 
@@ -134,7 +134,7 @@ namespace Veterinaria
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.btnInicioSesion);
             this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -150,7 +150,7 @@ namespace Veterinaria
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnInicioSesion;
         private System.Windows.Forms.Button btnRegistrarse;

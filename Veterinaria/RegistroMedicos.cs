@@ -14,7 +14,7 @@ namespace Veterinaria
 {
     public partial class RegistroMedicos : Form
     {
-        public string contraseñaEncriptada;
+
         public RegistroMedicos()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace Veterinaria
         {
             string Nombre, ApellidoP, ApellidoM, Especialidad, Direccion, Correo, Contraseña, Telefono;
             DateTime Nacimiento, HorarioInicio, HorarioFin;
-
+            
 
 
             if (string.IsNullOrWhiteSpace(txtNombreMedico.Text))
@@ -32,7 +32,7 @@ namespace Veterinaria
                 // El campo está en blanco
                 MessageBox.Show("El campo no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNombreMedico.Focus(); // Colocar el foco en el TextBox
-                return;
+                return ;
             }
             else if (!txtNombreMedico.Text.All(char.IsLetter))
             {
@@ -185,7 +185,7 @@ namespace Veterinaria
             {
                 return numeroTelefono.All(char.IsDigit);
             }
-
+          
             if (dtpFechaNacimientoMedico.Value >= DateTime.Now)
             {
                 // La fecha de nacimiento es inválida (en el futuro o igual a la fecha actual)
@@ -195,18 +195,18 @@ namespace Veterinaria
             }
             if (dtmHorarioDeInicio.Value <= DateTime.Now.Date)
             {
-
+                
                 MessageBox.Show("Horario esta fuera de rango", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (dtmFin.Value == dtmHorarioDeInicio.Value)
+           if (dtmFin.Value == dtmHorarioDeInicio.Value)
             {
 
                 MessageBox.Show("Horario no puede ser mismo que el de inicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
-            else if (dtmFin.Value <= dtmHorarioDeInicio.Value)
+           else if (dtmFin.Value <=dtmHorarioDeInicio.Value)
             {
 
                 MessageBox.Show("Horario no puede ser menor que el de inicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -236,32 +236,11 @@ namespace Veterinaria
             HorarioInicio = dtmHorarioDeInicio.Value;
             HorarioFin = dtmFin.Value;
             Contraseña = txtContraseñaRegistroMedico.Text;
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                // Convertir la contraseña en un arreglo de bytes
-                byte[] bytesContraseña = Encoding.UTF8.GetBytes(Contraseña);
-
-                // Calcular el hash de la contraseña
-                byte[] hashContraseña = sha256Hash.ComputeHash(bytesContraseña);
-
-
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < hashContraseña.Length; i++)
-                {
-                    sb.Append(hashContraseña[i].ToString("x2"));
-                }
-
-
-                 contraseñaEncriptada = sb.ToString();
-              
-
-            }
-
             string connectionString = @"Data Source=WINDOWS\SQLSERVER;Initial Catalog=VETERINARIA;User ID=sa;Password=17112001;";
 
             // Consulta de inserción
-            string query = "INSERT INTO MEDICO  (NOMBRE_MEDICO,APELLIDO_MATERNO,APELLIDO_PATERNO,ESPECIALIDAD,DIRECCION,TELEFONO ,CORREO,HORARIO_TRABAJO,CONTRASEÑA)" +
-                " VALUES (@Valor1, @Valor2, @Valor3, @Valor4, @Valor5, @Valor6, @Valor7, @Valor8,@Valor9)";
+            string query = "INSERT INTO MEDICO  (ID_MEDICO,NOMBRE_MEDICO,APELLIDO_MATERNO,APELLIDO_PATERNO,ESPECIALIDAD,DIRECCION,TELEFONO ,CORREO,HORARIO_TRABAJO)" +
+                " VALUES (@valor0,@Valor1, @Valor2, @Valor3, @Valor4, @Valor5, @Valor6, @Valor7, @Valor8)";
 
             // Crear una conexión a la base de datos
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -273,7 +252,7 @@ namespace Veterinaria
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     // Asignar valores a los parámetros de la consulta
-                    
+                    command.Parameters.AddWithValue("@Valor0", 1);
                     command.Parameters.AddWithValue("@Valor1", Nombre); // Reemplaza "valor1" con el valor real a insertar
                     command.Parameters.AddWithValue("@Valor2", ApellidoM); // Reemplaza "valor2" con el valor real a insertar
                     command.Parameters.AddWithValue("@Valor3", ApellidoP); // Reemplaza "valor3" con el valor real a insertar
@@ -282,8 +261,7 @@ namespace Veterinaria
                     command.Parameters.AddWithValue("@Valor6", Telefono);
                     command.Parameters.AddWithValue("@Valor7", Correo);
                     command.Parameters.AddWithValue("@Valor8", "2023/03/12");
-                    command.Parameters.AddWithValue("@Valor9", contraseñaEncriptada);
-
+            
                     // Ejecutar la consulta de inserción
                     command.ExecuteNonQuery();
                 }
@@ -291,9 +269,28 @@ namespace Veterinaria
 
 
 
+            
+           
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // Convertir la contraseña en un arreglo de bytes
+                byte[] bytesContraseña = Encoding.UTF8.GetBytes(Contraseña);
 
+                // Calcular el hash de la contraseña
+                byte[] hashContraseña = sha256Hash.ComputeHash(bytesContraseña);
 
-   
+               
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashContraseña.Length; i++)
+                {
+                    sb.Append(hashContraseña[i].ToString("x2"));
+                }
+
+               
+                string contraseñaEncriptada = sb.ToString();
+
+            }
+
 
 
             MessageBox.Show("¡Registro exitoso!", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -321,39 +318,6 @@ namespace Veterinaria
         private void RegistroMedicos_Load(object sender, EventArgs e)
         {
 
-            string connectionString = @"Data Source=WINDOWS\SQLSERVER;Initial Catalog=VETERINARIA;User ID=sa;Password=17112001;";
-
-            // Consulta de selección
-            string query = "SELECT MAX(ID_MEDICO) FROM MEDICO";
-
-            // Crear una conexión a la base de datos
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                // Abrir la conexión
-                connection.Open();
-
-                // Crear un comando con la consulta y la conexión
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    // Ejecutar la consulta y obtener el resultado
-                    object result = command.ExecuteScalar();
-
-                    if (result != null && result != DBNull.Value)
-                    {
-                        int ultimoID = Convert.ToInt32(result)+1;
-                        lblid.Text = ultimoID.ToString();
-                    }
-                   
-                }
-            }
-
-
         }
-
-
-
-
-
     }
 }
-

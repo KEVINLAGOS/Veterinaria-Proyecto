@@ -52,13 +52,12 @@
             this.dtmHorarioDeInicio = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.dtmFin = new System.Windows.Forms.DateTimePicker();
-            this.lblid = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnConfirmarYContinuarMedico
             // 
             this.btnConfirmarYContinuarMedico.Location = new System.Drawing.Point(438, 800);
-            this.btnConfirmarYContinuarMedico.Margin = new System.Windows.Forms.Padding(6);
+            this.btnConfirmarYContinuarMedico.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnConfirmarYContinuarMedico.Name = "btnConfirmarYContinuarMedico";
             this.btnConfirmarYContinuarMedico.Size = new System.Drawing.Size(264, 44);
             this.btnConfirmarYContinuarMedico.TabIndex = 42;
@@ -69,7 +68,7 @@
             // dtpFechaNacimientoMedico
             // 
             this.dtpFechaNacimientoMedico.Location = new System.Drawing.Point(280, 526);
-            this.dtpFechaNacimientoMedico.Margin = new System.Windows.Forms.Padding(6);
+            this.dtpFechaNacimientoMedico.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dtpFechaNacimientoMedico.Name = "dtpFechaNacimientoMedico";
             this.dtpFechaNacimientoMedico.Size = new System.Drawing.Size(396, 31);
             this.dtpFechaNacimientoMedico.TabIndex = 39;
@@ -77,7 +76,7 @@
             // txtContraseñaRegistroMedico
             // 
             this.txtContraseñaRegistroMedico.Location = new System.Drawing.Point(280, 740);
-            this.txtContraseñaRegistroMedico.Margin = new System.Windows.Forms.Padding(6);
+            this.txtContraseñaRegistroMedico.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtContraseñaRegistroMedico.Name = "txtContraseñaRegistroMedico";
             this.txtContraseñaRegistroMedico.PasswordChar = '*';
             this.txtContraseñaRegistroMedico.Size = new System.Drawing.Size(396, 31);
@@ -86,7 +85,7 @@
             // txtCorreoElectronicoMedico
             // 
             this.txtCorreoElectronicoMedico.Location = new System.Drawing.Point(280, 465);
-            this.txtCorreoElectronicoMedico.Margin = new System.Windows.Forms.Padding(6);
+            this.txtCorreoElectronicoMedico.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtCorreoElectronicoMedico.Name = "txtCorreoElectronicoMedico";
             this.txtCorreoElectronicoMedico.Size = new System.Drawing.Size(396, 31);
             this.txtCorreoElectronicoMedico.TabIndex = 37;
@@ -94,7 +93,7 @@
             // txtTelefonoMedico
             // 
             this.txtTelefonoMedico.Location = new System.Drawing.Point(280, 409);
-            this.txtTelefonoMedico.Margin = new System.Windows.Forms.Padding(6);
+            this.txtTelefonoMedico.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtTelefonoMedico.Name = "txtTelefonoMedico";
             this.txtTelefonoMedico.Size = new System.Drawing.Size(396, 31);
             this.txtTelefonoMedico.TabIndex = 36;
@@ -102,7 +101,7 @@
             // txtEspecialidad
             // 
             this.txtEspecialidad.Location = new System.Drawing.Point(280, 290);
-            this.txtEspecialidad.Margin = new System.Windows.Forms.Padding(6);
+            this.txtEspecialidad.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtEspecialidad.Name = "txtEspecialidad";
             this.txtEspecialidad.Size = new System.Drawing.Size(396, 31);
             this.txtEspecialidad.TabIndex = 35;
@@ -110,7 +109,7 @@
             // txtApellidoMaternoMedico
             // 
             this.txtApellidoMaternoMedico.Location = new System.Drawing.Point(280, 233);
-            this.txtApellidoMaternoMedico.Margin = new System.Windows.Forms.Padding(6);
+            this.txtApellidoMaternoMedico.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtApellidoMaternoMedico.Name = "txtApellidoMaternoMedico";
             this.txtApellidoMaternoMedico.Size = new System.Drawing.Size(396, 31);
             this.txtApellidoMaternoMedico.TabIndex = 34;
@@ -118,7 +117,7 @@
             // txtApellidoPaternoMedico
             // 
             this.txtApellidoPaternoMedico.Location = new System.Drawing.Point(280, 171);
-            this.txtApellidoPaternoMedico.Margin = new System.Windows.Forms.Padding(6);
+            this.txtApellidoPaternoMedico.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtApellidoPaternoMedico.Name = "txtApellidoPaternoMedico";
             this.txtApellidoPaternoMedico.Size = new System.Drawing.Size(396, 31);
             this.txtApellidoPaternoMedico.TabIndex = 33;
@@ -126,7 +125,7 @@
             // txtNombreMedico
             // 
             this.txtNombreMedico.Location = new System.Drawing.Point(280, 112);
-            this.txtNombreMedico.Margin = new System.Windows.Forms.Padding(6);
+            this.txtNombreMedico.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtNombreMedico.Name = "txtNombreMedico";
             this.txtNombreMedico.Size = new System.Drawing.Size(396, 31);
             this.txtNombreMedico.TabIndex = 32;
@@ -276,20 +275,11 @@
             this.dtmFin.Size = new System.Drawing.Size(396, 31);
             this.dtmFin.TabIndex = 48;
             // 
-            // lblid
-            // 
-            this.lblid.AutoSize = true;
-            this.lblid.Location = new System.Drawing.Point(433, 77);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(0, 25);
-            this.lblid.TabIndex = 49;
-            // 
             // RegistroMedicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 993);
-            this.Controls.Add(this.lblid);
             this.Controls.Add(this.dtmFin);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dtmHorarioDeInicio);
@@ -314,7 +304,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "RegistroMedicos";
             this.Text = "Registro para Medicos";
             this.Load += new System.EventHandler(this.RegistroMedicos_Load);
@@ -349,6 +339,5 @@
         private System.Windows.Forms.DateTimePicker dtmHorarioDeInicio;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dtmFin;
-        private System.Windows.Forms.Label lblid;
     }
 }

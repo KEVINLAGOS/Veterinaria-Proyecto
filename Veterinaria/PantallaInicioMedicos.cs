@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Veterinaria
 {
@@ -16,12 +17,15 @@ namespace Veterinaria
         {
             InitializeComponent();
         }
-
         private void btnCerrarSesionMedico_Click(object sender, EventArgs e)
         {
             this.Hide();
             login miLogin=new login();
             miLogin.Show();
+        }
+
+        private void PantallaInicioMedicos_Load(object sender, EventArgs e)
+        {
         }
     }
 }

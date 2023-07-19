@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -13,6 +14,9 @@ namespace Veterinaria
 {
     public partial class login : Form
     {
+        private string connectionString = "Data Source=localhost;Initial Catalog=VETERINARIA;Integrated Security=True";
+
+
         public login()
         {
             InitializeComponent();
@@ -20,13 +24,47 @@ namespace Veterinaria
 
         private void btnInicioSesion_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            InicioUsuarioDueño miInicioSesionUsuarioDueño = new InicioUsuarioDueño();
-            miInicioSesionUsuarioDueño.Show();
+            string nombreUsuario = txtNombreUsuario.Text;
+            string contrasena = txtContraseña.Text;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT COUNT(*) FROM Usuario WHERE Nombre_usuario = @NombreUsuario AND Contraseña = @Contrasena";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+                        command.Parameters.AddWithValue("@Contrasena", contrasena);
+
+                        int result = (int)command.ExecuteScalar();
+
+                        if (result > 0)
+                        {
+                            MessageBox.Show("Inicio de sesión exitoso.");
+                            this.Hide();
+                            InicioUsuarioDueño miInicioSesionUsuarioDueño = new InicioUsuarioDueño();
+                            miInicioSesionUsuarioDueño.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Credenciales incorrectas. Intente nuevamente.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            
         }
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             Registro miRegistro=new Registro();
             miRegistro.Show();

@@ -140,6 +140,7 @@ namespace Veterinaria
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "login";
             this.Text = "Inicio de sesión";
+            this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -38,5 +38,10 @@ namespace Veterinaria
             ClaveParaMedicos miClaveParaMedicos=new ClaveParaMedicos();
             miClaveParaMedicos.Show();
         }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

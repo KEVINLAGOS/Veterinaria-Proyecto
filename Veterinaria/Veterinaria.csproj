@@ -76,9 +76,7 @@
     <Compile Include="PantallaDeInicioPublica.Designer.cs">
       <DependentUpon>PantallaDeInicioPublica.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaInicioMedicos.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PantallaInicioMedicos.cs" />
     <Compile Include="PantallaInicioMedicos.Designer.cs">
       <DependentUpon>PantallaInicioMedicos.cs</DependentUpon>
     </Compile>
@@ -89,6 +87,11 @@
     </Compile>
     <Compile Include="RegistroMedicos.Designer.cs">
       <DependentUpon>RegistroMedicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VETERINARIADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VETERINARIADataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -129,6 +132,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="VETERINARIADataSet.xsc">
+      <DependentUpon>VETERINARIADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VETERINARIADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VETERINARIADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VETERINARIADataSet.xss">
+      <DependentUpon>VETERINARIADataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

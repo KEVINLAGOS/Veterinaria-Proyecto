@@ -46,9 +46,8 @@
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.txtContraseñaRegistro = new System.Windows.Forms.TextBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.radH = new System.Windows.Forms.RadioButton();
-            this.radM = new System.Windows.Forms.RadioButton();
             this.btnConfirmarYContinuar = new System.Windows.Forms.Button();
+            this.cbGenero = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -197,28 +196,6 @@
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaNacimiento.TabIndex = 17;
             // 
-            // radH
-            // 
-            this.radH.AutoSize = true;
-            this.radH.Location = new System.Drawing.Point(226, 265);
-            this.radH.Name = "radH";
-            this.radH.Size = new System.Drawing.Size(77, 17);
-            this.radH.TabIndex = 19;
-            this.radH.TabStop = true;
-            this.radH.Text = "H (hombre)";
-            this.radH.UseVisualStyleBackColor = true;
-            // 
-            // radM
-            // 
-            this.radM.AutoSize = true;
-            this.radM.Location = new System.Drawing.Point(147, 265);
-            this.radM.Name = "radM";
-            this.radM.Size = new System.Drawing.Size(68, 17);
-            this.radM.TabIndex = 20;
-            this.radM.TabStop = true;
-            this.radM.Text = "M (mujer)";
-            this.radM.UseVisualStyleBackColor = true;
-            // 
             // btnConfirmarYContinuar
             // 
             this.btnConfirmarYContinuar.Location = new System.Drawing.Point(226, 352);
@@ -229,14 +206,24 @@
             this.btnConfirmarYContinuar.UseVisualStyleBackColor = true;
             this.btnConfirmarYContinuar.Click += new System.EventHandler(this.btnConfirmarYContinuar_Click);
             // 
+            // cbGenero
+            // 
+            this.cbGenero.FormattingEnabled = true;
+            this.cbGenero.Items.AddRange(new object[] {
+            "Hombre",
+            "Mujer"});
+            this.cbGenero.Location = new System.Drawing.Point(147, 261);
+            this.cbGenero.Name = "cbGenero";
+            this.cbGenero.Size = new System.Drawing.Size(200, 21);
+            this.cbGenero.TabIndex = 22;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 401);
+            this.Controls.Add(this.cbGenero);
             this.Controls.Add(this.btnConfirmarYContinuar);
-            this.Controls.Add(this.radM);
-            this.Controls.Add(this.radH);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.txtContraseñaRegistro);
             this.Controls.Add(this.txtCorreoElectronico);
@@ -282,8 +269,7 @@
         private System.Windows.Forms.TextBox txtCorreoElectronico;
         private System.Windows.Forms.TextBox txtContraseñaRegistro;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
-        private System.Windows.Forms.RadioButton radH;
-        private System.Windows.Forms.RadioButton radM;
         private System.Windows.Forms.Button btnConfirmarYContinuar;
+        private System.Windows.Forms.ComboBox cbGenero;
     }
 }

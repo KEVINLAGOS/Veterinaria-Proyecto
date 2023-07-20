@@ -199,21 +199,7 @@ namespace Veterinaria
                 MessageBox.Show("Horario esta fuera de rango", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-           if (dtmFin.Value == dtmHorarioDeInicio.Value)
-            {
-
-                MessageBox.Show("Horario no puede ser mismo que el de inicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-
-            }
-           else if (dtmFin.Value <=dtmHorarioDeInicio.Value)
-            {
-
-                MessageBox.Show("Horario no puede ser menor que el de inicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-
-            }
-
+           
             if (string.IsNullOrWhiteSpace(txtContraseñaRegistroMedico.Text))
             {
                 // El campo está en blanco
@@ -234,7 +220,7 @@ namespace Veterinaria
             Correo = txtCorreoElectronicoMedico.Text;
             Nacimiento = dtpFechaNacimientoMedico.Value;
             HorarioInicio = dtmHorarioDeInicio.Value;
-            HorarioFin = dtmFin.Value;
+           
             Contraseña = txtContraseñaRegistroMedico.Text;
             using (SHA256 sha256Hash = SHA256.Create())
             {
@@ -259,7 +245,7 @@ namespace Veterinaria
 
             // Consulta de inserción
             string query = "INSERT INTO MEDICO (NOMBRE_MEDICO,APELLIDO_MATERNO,APELLIDO_PATERNO,ESPECIALIDAD,DIRECCION,TELEFONO ,CORREO,HORARIO_TRABAJO,CONTRASEÑA)" +
-                "VALUES (@Valor1, @Valor2, @Valor3, @Valor4, @Valor5, @Valor6, @Valor7, @Valor8,@Valor9)";
+                "VALUES @Valor1, @Valor2, @Valor3, @Valor4, @Valor5, @Valor6, @Valor7, @Valor8,@Valor9)";
 
             // Crear una conexión a la base de datos
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -278,7 +264,7 @@ namespace Veterinaria
                     command.Parameters.AddWithValue("@Valor5", Direccion);
                     command.Parameters.AddWithValue("@Valor6", Telefono);
                     command.Parameters.AddWithValue("@Valor7", Correo);
-                    command.Parameters.AddWithValue("@Valor8", "2023/03/12");
+                    command.Parameters.AddWithValue("@Valor8", HorarioInicio);
                     command.Parameters.AddWithValue("@Valor9",contraseñaencriptada);
 
 

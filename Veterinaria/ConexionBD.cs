@@ -9,7 +9,7 @@ namespace Veterinaria
 {
     public class ConexionBD
     {
-        private static string connectionString = "Data Source=DESKTOP-9GCKMTO\\SQLEXPRESS;Initial Catalog=VETERINARIA;Integrated Security=True;";
+        private static string connectionString = "Data Source=192.168.1.117;Initial Catalog=VETERINARIA;Integrated Security=True;";
         private static SqlConnection connection = new SqlConnection(connectionString);
 
         public static void AbrirConexion()

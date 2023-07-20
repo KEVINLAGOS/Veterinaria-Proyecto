@@ -14,7 +14,7 @@ namespace Veterinaria
 {
     public partial class login : Form
     {
-        private string connectionString = "Data Source=localhost;Initial Catalog=VETERINARIA;Integrated Security=True";
+        private string connectionString = "data source=192.168.1.170,1433;initial catalog=VETERINARIA;user Prueba;password=12345;";
 
 
         public login()

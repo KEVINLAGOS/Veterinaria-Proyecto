@@ -13,7 +13,7 @@ namespace Veterinaria
 {
     public partial class Registro : Form
     {
-        private string connectionString = "Data Source=localhost;Initial Catalog=VETERINARIA;Integrated Security=True";
+        private static string connectionString = "Data Source=192.168.1.117;Initial Catalog=VETERINARIA;Integrated Security=True;";
         public Registro()
         {
             InitializeComponent();

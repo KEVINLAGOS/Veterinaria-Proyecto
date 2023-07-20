@@ -245,7 +245,7 @@ namespace Veterinaria
 
             // Consulta de inserción
             string query = "INSERT INTO MEDICO (NOMBRE_MEDICO,APELLIDO_MATERNO,APELLIDO_PATERNO,ESPECIALIDAD,DIRECCION,TELEFONO ,CORREO,HORARIO_TRABAJO,CONTRASEÑA)" +
-                "VALUES @Valor1, @Valor2, @Valor3, @Valor4, @Valor5, @Valor6, @Valor7, @Valor8,@Valor9)";
+                "VALUES (@Valor1, @Valor2, @Valor3, @Valor4, @Valor5, @Valor6, @Valor7, @Valor8,@Valor9)";
 
             // Crear una conexión a la base de datos
             using (SqlConnection connection = new SqlConnection(connectionString))
